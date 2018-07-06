@@ -92,8 +92,82 @@
                         - git status - visualizar os arquivos que sofreram alterações
                         - git add    - adicionar alterações para serem gravadas
                         - git commit - gravar alterações no repositório
+                </section>
+                <section data-markdown>
+                    ## Histórico de alterações
+                    #### Git log
+
+                    ```
+                        $ git log
+                    ```
+                    O resultado do log deve ser algo assim
+                    ```
+                    commit 36130eaabf3fca2d3fe43217a804ed319fd62cd9
+                    Author: Gabriele Luz <gabrieleluz@users.noreply.github.com>
+                    Date:   Fri Jul 6 12:13:16 2018 -0300
+
+                        starts presentation
+
+                        commit 02d7b2fcff82307d64f6a4dfaa6bdf32c5f1c54f
+                        Author: Gabriele Luz <gabrieleluz@users.noreply.github.com>
+                        Date:   Fri Jul 6 11:31:02 2018 -0300
+
+                            Initial commit
+
+                    ```
+
+                    *Digite q para sair da visualização do log*
+                </section>
+
+                <section data-markdown>
+                    ## Trabalhando com servidor remoto
+                    ### Adicionando ao servidor remoto
+                    ```
+                    $ git remote add origin https://github.com/< usuario >/< repo >
+                    ```
+                    ### Enviando alterações para o servidor remoto
+                    ```
+                        $ git push origin < nome-da-branch >
+                    ```
 
                 </section>
+                <section>
+                    <h2> Colaborando </h2>
+                    <section data-markdown>
+                        ### Baixando um novo repositório
+                        #### Git clone
+                        Clona um repositório numa nova pasta.
+
+                        ```
+                        $ git clone http://github.com/< usuario >/< repo >
+                        ```
+                        </section>
+                        </section>
+                        <section data-markdown>
+                        ### Exercício
+                        - Adicione o colega ao lado como colaborador do projeto:
+                             ```
+                             Settings > Collaborators > Add collaborator
+                             ```
+                         - Clone o repositório do colega.
+                         - Descomente a seção `personagem-2` em `index.html` e preencha com as informações do seu personagem.
+                         - Em seguida, commite as alterações.
+                         Não esqueça de usar `git add`, `git commit` e, por fim, git push.
+                    </section>
+                    <section data-markdown>
+                        ## Baixando novas alterações
+                        ### Git pull
+                        Baixa alterações realizadas no repositório remoto.
+
+                        `$ git pull < remoto > < branch >`
+
+                        *Em breve entenderemos o funcionamento de branches. Por enquanto, utilize o comando `$ git pull origin master` para baixar alterações.*
+                    </section>
+                    <section data-markdown>
+                       # Exercício
+                       Navegue de volta para o seu repositório e baixe as alterações realizadas pelo colega.
+
+                    </section>
 			</div>
 		</div>
 
