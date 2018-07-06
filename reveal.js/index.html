@@ -42,19 +42,18 @@
                     $ git config user.email gabrieleluz@github.com
                     ```
                     _O comando git config --list lista as configurações setadas no seu repositório_
-
                 </section>
                 <section>
                     <h2> Rastreando arquivos</h2>
                     <section data-markdown>
-                        #### Git status
+                        Git status
                         Mostra o status do diretório de trabalho
                         ```
                             $ git status
                          ```
                     </section>
                     <section data-markdown>
-                         #### Git add
+                         Git add
                          Informa ao git que as mudanças no(s) arquivo(s) indicado(s) devem ser rastreadas.
 
                          ```
@@ -75,7 +74,7 @@
 
                 <section data-markdown>
                     ## Gravando alterações no repositório
-                    #### Git commit
+                    Git commit
                     Grava mudanças no repositório
 
                     ```
@@ -95,7 +94,7 @@
                 </section>
                 <section data-markdown>
                     ## Histórico de alterações
-                    #### Git log
+                    Git log
 
                     ```
                         $ git log
@@ -131,43 +130,94 @@
                     ```
 
                 </section>
-                <section>
-                    <h2> Colaborando </h2>
+                <section data-markdown>
+                    ## Colaborando
+                    ### Baixando um novo repositório
+                    Git clone
+                    Clona um repositório numa nova pasta.
+
+                    ```
+                    $ git clone http://github.com/< usuario >/< repo >
+                    ```
+                </section>
+                <section data-markdown>
+	                ### Exercício
+	                - Adicione o colega ao lado como colaborador do projeto:
+	                     ```
+	                     Settings > Collaborators > Add collaborator
+	                     ```
+	                 - Clone o repositório do colega.
+	                 - Descomente a seção `personagem-2` em `index.html` e preencha com as informações do seu personagem.
+	                 - Em seguida, commite as alterações.
+	                 Não esqueça de usar `git add`, `git commit` e, por fim, git push.
+            	</section>
+            	<section data-markdown>
+	                ## Baixando novas alterações
+	                ### Git pull
+	                Baixa alterações realizadas no repositório remoto.
+
+	                ```
+                    $ git pull < remoto > < branch >
+                    ```
+
+	                Em breve entenderemos o funcionamento de branches. Por enquanto, utilize o comando 
+                    ```$ git pull origin master```
+                    para baixar alterações.
+            	</section>
+
+				<section data-markdown>
+	               	# Exercício
+	               	Navegue de volta para o seu repositório e baixe as alterações realizadas pelo colega.
+            	</section>
+
+				<section>
+				    <h2> Branches</h2>
+				    <section data-markdown>
+				        Linhas de *desenvolvimento* paralelas.
+
+				        São comumente utilizadas para:
+				        - Desenvolver novas funcionalidades;
+				        - Correções de bugs;
+				        - Organizar o repositório logicamente de acordo com o que está sendo desenvolvido.
+
+				    </section>
+				    <section data-markdown>
+				       Criando uma nova branch
+
+				       ```
+				       $ git branch < nome-da-branch >
+				       ```
+
+				       Listando branches
+				       ```
+				       $ git branch --list
+				       ```
+				       
+                       Acessando branches
+				       ```
+				       $ git checkout < nome-da-branch >
+				       ```
+                       
+                       Deletando Branches
+                       ```
+                       $ git branch -D < nome-da-branch >
+                       ```
+
+				   </section>
                     <section data-markdown>
-                        ### Baixando um novo repositório
-                        #### Git clone
-                        Clona um repositório numa nova pasta.
+                       ### Master
 
-                        ```
-                        $ git clone http://github.com/< usuario >/< repo >
-                        ```
-                        </section>
-                        </section>
-                        <section data-markdown>
-                        ### Exercício
-                        - Adicione o colega ao lado como colaborador do projeto:
-                             ```
-                             Settings > Collaborators > Add collaborator
-                             ```
-                         - Clone o repositório do colega.
-                         - Descomente a seção `personagem-2` em `index.html` e preencha com as informações do seu personagem.
-                         - Em seguida, commite as alterações.
-                         Não esqueça de usar `git add`, `git commit` e, por fim, git push.
-                    </section>
-                    <section data-markdown>
-                        ## Baixando novas alterações
-                        ### Git pull
-                        Baixa alterações realizadas no repositório remoto.
+                       - Linha de desenvolvimento principal
+                       - Criada automaticamente ao inicializar o git
+                   </section>
+                   <section data-markdown>
+                       Enviando alterações a partir de uma nova branch
 
-                        `$ git pull < remoto > < branch >`
-
-                        *Em breve entenderemos o funcionamento de branches. Por enquanto, utilize o comando `$ git pull origin master` para baixar alterações.*
-                    </section>
-                    <section data-markdown>
-                       # Exercício
-                       Navegue de volta para o seu repositório e baixe as alterações realizadas pelo colega.
-
-                    </section>
+                       ```
+                       $ git push origin < nome-da-branch >
+                       ```
+                   </section>
+				</section>
 			</div>
 		</div>
 
