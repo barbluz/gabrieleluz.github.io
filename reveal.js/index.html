@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Controle de Versão com Git e GitHub</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Controle de versão usando Git e GitHub</h1>
+                </section>
+
+                <section data-markdown>
+                    Inicializando o projeto
+                    ```
+                    $ mkdir ideal-adventure
+                    $ cd ideal-adventure
+                    $ git init
+                    ```
+
+                    Configurando o usuário
+                    ```
+                    $ git config user.name "Gabriele Luz"
+                    $ git config user.email gabrieleluz@github.com
+                    ```
+                    _O comando git config --list lista as configurações setadas no seu repositório_
+
+                </section>
+                <section>
+                    <h2> Rastreando arquivos</h2>
+                    <section data-markdown>
+                        #### Git status
+                        Mostra o status do diretório de trabalho
+                        ```
+                            $ git status
+                         ```
+                    </section>
+                    <section data-markdown>
+                         #### Git add
+                         Informa ao git que as mudanças no(s) arquivo(s) indicado(s) devem ser rastreadas.
+
+                         ```
+                            $ git add < arquivo >
+                         ```
+                    </section>
+                </section>
+                <section>
+                    <h1>Exercício</h1>
+                    <ul>
+                        <li>Verifique o status do diretório com o comando `$ git status`</li>
+
+                        <li>Informe ao git para rastrear as alterações de todos os qrquivos</li>
+
+                        <li>[fragment] Você pode fazer isso adicionando todos os arquivos manualmente `$ git add < arquivo >` ou usar `$ git add .` para adicionar todos os arquivos</li>
+                    </ul>
+                </section>
+
+                <section data-markdown>
+                    ## Gravando alterações no repositório
+                    #### Git commit
+                    Grava mudanças no repositório
+
+                    ```
+                        $ git commit -m "mensagem"
+                    ```
+
+                    *É importante que a mensagem do commit diga respeito ao que foi feito na alteração.*
+                    </section>
+                <section data-markdown>
+                    # Exercício
+                    Realize alterações nos dados do seu persongagem e realize um commit a cada alteração
+
+                        Lembre-se:
+                        - git status - visualizar os arquivos que sofreram alterações
+                        - git add    - adicionar alterações para serem gravadas
+                        - git commit - gravar alterações no repositório
+
+                </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
