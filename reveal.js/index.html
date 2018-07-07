@@ -46,46 +46,45 @@
                 <section>
                     <h2> Rastreando arquivos</h2>
                     <section data-markdown>
-                        Git status
+                        #### Git status
 
                         Mostra o status do diretório de trabalho
                         ```
-                            $ git status
+                         $ git status
                          ```
                     </section>
                     <section data-markdown>
-                         Git add
+                         #### Git add
+
                          Informa ao git que as mudanças no(s) arquivo(s) indicado(s) devem ser rastreadas.
 
                          ```
-                            $ git add < arquivo >
+                         $ git add < arquivo >
                          ```
                     </section>
                 </section>
-                <section>
+                <section id="fragment">
                     <h1>Exercício</h1>
-                    <ul>
-                        <li>Verifique o status do diretório com o comando `$ git status`</li>
+                    <p class="fragment">Verifique o status do diretório com o comando <code>$ git status</code></p>
 
-                        <li>Informe ao git para rastrear as alterações de todos os qrquivos</li>
-
-                        <li>[fragment] Você pode fazer isso adicionando todos os arquivos manualmente `$ git add < arquivo >` ou usar `$ git add .` para adicionar todos os arquivos</li>
-                    </ul>
+                    <p class="fragment">Informe ao git para rastrear as alterações de todos os arquivos (Use <code>$ git add .</code> para adicionar todos os arquivos)</p>
                 </section>
 
                 <section data-markdown>
                     ## Gravando alterações no repositório
-                    Git commit
-                    Grava mudanças no repositório
+                    #### Git commit
 
                     ```
-                        $ git commit -m "mensagem"
+                    $ git commit -m "mensagem"
                     ```
 
-                    *É importante que a mensagem do commit diga respeito ao que foi feito na alteração.*
+                    *A mensagem deve ser relacionada à alteração realizada pelo commit.*
+
                     </section>
                 <section data-markdown>
                     # Exercício
+                    Navegue até o arquivo `variaveis-personagem-principal.js`
+
                     Realize alterações nos dados do seu persongagem e realize um commit a cada alteração
 
                         Lembre-se:
@@ -95,13 +94,11 @@
                 </section>
                 <section data-markdown>
                     ## Histórico de alterações
-                    Git log
+                    #### Git log
 
                     ```
-                        $ git log
-                    ```
-                    O resultado do log deve ser algo assim
-                    ```
+                    $ git log
+
                     commit 36130eaabf3fca2d3fe43217a804ed319fd62cd9
                     Author: Gabriele Luz <gabrieleluz@users.noreply.github.com>
                     Date:   Fri Jul 6 12:13:16 2018 -0300
@@ -121,35 +118,39 @@
 
                 <section data-markdown>
                     ## Trabalhando com servidor remoto
-                    ### Adicionando ao servidor remoto
+                    Adicionando ao servidor remoto
                     ```
                     $ git remote add origin https://github.com/< usuario >/< repo >
                     ```
-                    ### Enviando alterações para o servidor remoto
+                    Enviando alterações para o servidor remoto
                     ```
-                        $ git push origin < nome-da-branch >
+                    $ git push origin < nome-da-branch >
                     ```
 
                 </section>
                 <section data-markdown>
                     ## Colaborando
-                    ### Baixando um novo repositório
-                    Git clone
-                    Clona um repositório numa nova pasta.
-
+                    Baixando um novo repositório
+                    
+                    #### Git clone
+                    
                     ```
                     $ git clone http://github.com/< usuario >/< repo >
                     ```
                 </section>
-                <section data-markdown>
-	                ### Exercício
-	                - Adicione o colega ao lado como colaborador do projeto:
-	                     ```
+                <section id="fragment">
+	                <h1>Exercício</h1>
+	                <p class="fragment"> Adicione o colega ao lado como colaborador do projeto no GitHub: 
+	                </p>
+	                <p class="fragment">
+	                	<code>
 	                     Settings > Collaborators > Add collaborator
-	                     ```
-	                 - Clone o repositório do colega.
-	                 - Descomente a seção `personagem-2` em `index.html` e preencha com as informações do seu personagem.
-	                 - Em seguida, commite as alterações.
+	                 </code></p>
+	                 <p class="fragment"> Clone o repositório do colega. </p>
+	                 <p class="fragment"> 
+						No arquivo 
+	                 </p>
+	                 <p class="fragment"> Em seguida, commite as alterações. </p>
 	                 Não esqueça de usar `git add`, `git commit` e, por fim, git push.
             	</section>
             	<section data-markdown>
