@@ -29,9 +29,9 @@
                 </section>
 
                 <section data-markdown>
+                    ### Inicializando o Git
                     Inicializando o projeto
                     ```
-                    $ mkdir ideal-adventure
                     $ cd ideal-adventure
                     $ git init
                     ```
@@ -47,6 +47,7 @@
                     <h2> Rastreando arquivos</h2>
                     <section data-markdown>
                         Git status
+
                         Mostra o status do diretório de trabalho
                         ```
                             $ git status
@@ -107,11 +108,11 @@
 
                         starts presentation
 
-                        commit 02d7b2fcff82307d64f6a4dfaa6bdf32c5f1c54f
-                        Author: Gabriele Luz <gabrieleluz@users.noreply.github.com>
-                        Date:   Fri Jul 6 11:31:02 2018 -0300
+                    commit 02d7b2fcff82307d64f6a4dfaa6bdf32c5f1c54f
+                    Author: Gabriele Luz <gabrieleluz@users.noreply.github.com>
+                    Date:   Fri Jul 6 11:31:02 2018 -0300
 
-                            Initial commit
+                        Initial commit
 
                     ```
 
@@ -160,7 +161,7 @@
                     $ git pull < remoto > < branch >
                     ```
 
-	                Em breve entenderemos o funcionamento de branches. Por enquanto, utilize o comando 
+	                Em breve entenderemos o funcionamento de branches. Por enquanto, utilize o comando
                     ```$ git pull origin master```
                     para baixar alterações.
             	</section>
@@ -192,12 +193,12 @@
 				       ```
 				       $ git branch --list
 				       ```
-				       
+
                        Acessando branches
 				       ```
 				       $ git checkout < nome-da-branch >
 				       ```
-                       
+
                        Deletando Branches
                        ```
                        $ git branch -D < nome-da-branch >
@@ -218,6 +219,19 @@
                        ```
                    </section>
 				</section>
+                <section data-markdown>
+                    # Exercício
+                    - Do repositório do colega e crie uma nova branch
+                    - A partir dessa nova branch, altere os dados do seu personagem, commitando a cada alteração feita
+                    - Envie as alterações para o repositório remoto
+                </section>
+                <section data-markdown>
+                    ## Mesclando alterações com Pull Requests
+                    Método de submissão de contribuições
+
+                    Permite revisão de código antes de incorporação à linha de desenvolvimento principal
+
+                </section>
 			</div>
 		</div>
 
