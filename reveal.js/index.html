@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Controle de Versão com Git e GitHub</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Controle de versão usando Git e GitHub</h1>
+                </section>
+
+                <section data-markdown>
+                    ### Inicializando o Git
+                    Inicializando o projeto
+                    ```
+                    $ cd ideal-adventure
+                    $ git init
+                    ```
+
+                    Configurando o usuário
+                    ```
+                    $ git config user.name "Gabriele Luz"
+                    $ git config user.email gabrieleluz@github.com
+                    ```
+                    _O comando git config --list lista as configurações setadas no seu repositório_
+                </section>
+                <section>
+                    <h2> Rastreando arquivos</h2>
+                    <section data-markdown>
+                        #### Git status
+
+                        Mostra o status do diretório de trabalho
+                        ```
+                         $ git status
+                         ```
+                    </section>
+                    <section data-markdown>
+                         #### Git add
+
+                         Informa ao git que as mudanças no(s) arquivo(s) indicado(s) devem ser rastreadas.
+
+                         ```
+                         $ git add < arquivo >
+                         ```
+                    </section>
+                </section>
+                <section id="fragment">
+                    <h1>Exercício</h1>
+                    <p class="fragment">Verifique o status do diretório com o comando <code>$ git status</code></p>
+
+                    <p class="fragment">Informe ao git para rastrear as alterações de todos os arquivos (Use <code>$ git add .</code> para adicionar todos os arquivos)</p>
+                </section>
+
+                <section data-markdown>
+                    ## Gravando alterações no repositório
+                    #### Git commit
+
+                    ```
+                    $ git commit -m "mensagem"
+                    ```
+
+                    *A mensagem deve ser relacionada à alteração realizada pelo commit.*
+
+                    </section>
+                <section data-markdown>
+                    # Exercício
+                    Navegue até o arquivo `variaveis-personagem-principal.js`
+
+                    Realize alterações nos dados do seu persongagem e realize um commit a cada alteração
+
+                        Lembre-se:
+                        - git status - visualizar os arquivos que sofreram alterações
+                        - git add    - adicionar alterações para serem gravadas
+                        - git commit - gravar alterações no repositório
+                </section>
+                <section data-markdown>
+                    ## Histórico de alterações
+                    #### Git log
+
+                    ```
+                    $ git log
+
+                    commit 36130eaabf3fca2d3fe43217a804ed319fd62cd9
+                    Author: Gabriele Luz <gabrieleluz@users.noreply.github.com>
+                    Date:   Fri Jul 6 12:13:16 2018 -0300
+
+                        starts presentation
+
+                    commit 02d7b2fcff82307d64f6a4dfaa6bdf32c5f1c54f
+                    Author: Gabriele Luz <gabrieleluz@users.noreply.github.com>
+                    Date:   Fri Jul 6 11:31:02 2018 -0300
+
+                        Initial commit
+
+                    ```
+
+                    *Digite q para sair da visualização do log*
+                </section>
+
+                <section data-markdown>
+                    ## Trabalhando com servidor remoto
+                    Adicionando ao servidor remoto
+                    ```
+                    $ git remote add origin https://github.com/< usuario >/< repo >
+                    ```
+                    Enviando alterações para o servidor remoto
+                    ```
+                    $ git push origin < nome-da-branch >
+                    ```
+
+                </section>
+                <section data-markdown>
+                    ## Colaborando
+                    Baixando um novo repositório
+                    
+                    #### Git clone
+                    
+                    ```
+                    $ git clone http://github.com/< usuario >/< repo >
+                    ```
+                </section>
+                <section id="fragment">
+	                <h1>Exercício</h1>
+	                <p class="fragment"> Adicione o colega ao lado como colaborador do projeto no GitHub: 
+	                </p>
+	                <p class="fragment">
+	                	<code>
+	                     Settings > Collaborators > Add collaborator
+	                 </code></p>
+	                 <p class="fragment"> Clone o repositório do colega. </p>
+	                 <p class="fragment"> 
+						No arquivo <code>variaveis-personagem-secundario.js</code> altere o valor de mostra_o_secundario.css para mostra_o_secundario.css('display', 'none')
+	                 </p>
+	                 <p class="fragment"> Em seguida, commite as alterações. </p>
+	                 <p class="fragment">Não esqueça de usar `git add`, `git commit` e, por fim, git push.</p>
+            	</section>
+            	<section data-markdown>
+	                ## Baixando novas alterações
+	                ### Git pull
+	                Baixa alterações realizadas no repositório remoto.
+
+	                ```
+                    $ git pull < remoto > < branch >
+                    ```
+
+	                Em breve entenderemos o funcionamento de branches. Por enquanto, utilize o comando
+                    ```$ git pull origin master```
+                    para baixar alterações.
+            	</section>
+
+				<section data-markdown>
+	               	# Exercício
+	               	Navegue de volta para o seu repositório e baixe as alterações realizadas pelo colega.
+            	</section>
+
+				<section>
+				    <h2> Branches</h2>
+				    <section data-markdown>
+				        Linhas de *desenvolvimento* paralelas.
+
+				        São comumente utilizadas para:
+				        - Desenvolver novas funcionalidades;
+				        - Correções de bugs;
+				        - Organizar o repositório logicamente de acordo com o que está sendo desenvolvido.
+
+				    </section>
+				    <section data-markdown>
+				       Criando uma nova branch
+
+				       ```
+				       $ git branch < nome-da-branch >
+				       ```
+
+				       Listando branches
+				       ```
+				       $ git branch --list
+				       ```
+
+                       Acessando branches
+				       ```
+				       $ git checkout < nome-da-branch >
+				       ```
+
+                       Deletando Branches
+                       ```
+                       $ git branch -D < nome-da-branch >
+                       ```
+
+				   </section>
+                    <section data-markdown>
+                       ### Master
+
+                       - Linha de desenvolvimento principal
+                       - Criada automaticamente ao inicializar o git
+                   </section>
+                   <section data-markdown>
+                       Enviando alterações a partir de uma nova branch
+
+                       ```
+                       $ git push origin < nome-da-branch >
+                       ```
+                   </section>
+				</section>
+                <section data-markdown>
+                    # Exercício
+                    - Do repositório do colega e crie uma nova branch
+                    - A partir dessa nova branch, altere os dados do seu personagem, commitando a cada alteração feita
+                    - Envie as alterações para o repositório remoto
+                </section>
+                <section data-markdown>
+                    ## Mesclando alterações com Pull Requests
+                    Método de submissão de contribuições
+
+                    Permite revisão de código antes de incorporação à linha de desenvolvimento principal
+
+                </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
